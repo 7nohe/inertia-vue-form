@@ -19,7 +19,7 @@ export const useZodForm: <
   formData: T,
   zodSchema: ZodObject<U>,
   rememberKey?: string
-) => InertiaForm<T> = <
+) => InertiaForm<T> & { errors: Record<string, string | undefined> } = <
   T extends Record<string, unknown>,
   U extends ZodRawShape
 >(
